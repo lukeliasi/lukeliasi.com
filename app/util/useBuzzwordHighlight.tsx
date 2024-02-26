@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useLocation } from "@remix-run/react";
 
 /**
  * These words are buzzwords that should be highlighted
@@ -52,6 +53,8 @@ const buzzwords = [
 ];
 
 export function useBuzzwordHighlight() {
+  const location = useLocation();
+
   // Highlight buzzwords in the page
   useEffect(() => {
     // Add tags that should be searched for buzzwords
@@ -65,5 +68,5 @@ export function useBuzzwordHighlight() {
         element.innerHTML = element.innerHTML.replace(regex, (match, p1, p2, p3, p4) => `${p1}<span class="buzzword">${p2}</span>${p3}${p4}`);
       }
     }
-  }, []);
+  }, [location.pathname]);
 }

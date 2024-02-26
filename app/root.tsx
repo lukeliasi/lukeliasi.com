@@ -1,9 +1,7 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -11,11 +9,12 @@ import {
 } from "@remix-run/react";
 
 // Global styles
-import resetStyles from "./styles/_reset.css";
+import resetStyles from "./styles/_reset.css?url";
+// TODO: Tippy:
 import 'tippy.js/dist/tippy.css';
-import fontsStyles from "./styles/_fonts.css";
-import varsStyles from "./styles/_vars.css";
-import globalStyles from "./styles/_global.css";
+import fontsStyles from "./styles/_fonts.css?url";
+import varsStyles from "./styles/_vars.css?url";
+import globalStyles from "./styles/_global.css?url";
 
 import { Footer, FooterCSS } from "./components/Footer";
 import { Header, HeaderCSS } from "./components/Header";
@@ -27,7 +26,6 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: fontsStyles },
   { rel: 'stylesheet', href: varsStyles },
   { rel: 'stylesheet', href: globalStyles },
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   ...FooterCSS(),
   ...HeaderCSS(),
 ];
@@ -54,7 +52,6 @@ export default function App() {
         {/* <BuzzwordHighlight /> */}
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );

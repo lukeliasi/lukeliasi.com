@@ -2,7 +2,7 @@ import { Link } from "@remix-run/react";
 import { LinksFunction } from "@remix-run/node";
 import { Menu, MenuCSS } from "./Menu/Menu";
 
-import styles from "../styles/Header.css";
+import styles from "../styles/Header.css?url";
 
 export const HeaderCSS: LinksFunction = () => [
   { rel: "stylesheet", href: styles },

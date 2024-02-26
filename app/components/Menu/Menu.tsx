@@ -1,7 +1,7 @@
 import type { LinksFunction } from "@remix-run/node";
 import { Menu_Item } from "./Menu_Item";
 
-import styles from "../../styles/Menu.css";
+import styles from "../../styles/Menu.css?url";
 
 export const MenuCSS: LinksFunction = () => [
   { rel: "stylesheet", href: styles },

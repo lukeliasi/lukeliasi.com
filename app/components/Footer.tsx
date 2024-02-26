@@ -1,6 +1,6 @@
 import type { LinksFunction } from "@remix-run/node";
 
-import styles from "../styles/Footer.css";
+import styles from "../styles/Footer.css?url";
 
 export const FooterCSS: LinksFunction = () => [
   { rel: "stylesheet", href: styles },

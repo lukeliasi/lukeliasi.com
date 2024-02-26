@@ -12,7 +12,7 @@ export default function Home() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <p className="legal">dude</p>
       <h1>Welcome to Remix!</h1>
-      <p>javascript react React hello JavaScript Git Linux</p>
+      <p>javascript react React hello JavaScript Git Linux CSS</p>
       <ul>
         <li>
           <a
