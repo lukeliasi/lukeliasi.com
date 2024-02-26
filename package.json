@@ -1,25 +1,42 @@
 {
-  "name": "lukeliasi",
+  "name": "lukeliasi.com",
+  "private": true,
+  "sideEffects": false,
   "type": "module",
-  "version": "0.0.1",
-  "license": "MIT",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "remix build",
+    "dev": "remix dev --manual",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "remix-serve ./build/index.js",
+    "typecheck": "tsc"
   },
   "dependencies": {
-    "astro": "3.0.12",
-    "@astrojs/mdx": "1.0.3",
-    "tippy.js": "6.3.7",
-    "mdast-util-to-string": "4.0.0",
-    "reading-time": "1.5.0"
+    "@remix-run/css-bundle": "^2.7.2",
+    "@remix-run/node": "^2.7.2",
+    "@remix-run/react": "^2.7.2",
+    "@remix-run/serve": "^2.7.2",
+    "isbot": "^4.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
-    "autoprefixer": "10.4.15",
-    "cssnano": "6.0.1",
-    "sass": "1.66.1"
+    "@remix-run/dev": "^2.7.2",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.38.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.35",
+    "postcss-nesting": "^12.0.3",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

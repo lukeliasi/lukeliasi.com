@@ -1,0 +1,84 @@
+/* 
+  Menu.tsx
+  ------------------------
+*/
+.menu-nav {
+  .menu-list {
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 1.25rem;
+    list-style-type: none;
+  }
+  
+  #mobile-toggle-menu {
+    display: none;
+    background: none;
+    border: none;
+  }
+  
+  @media screen and (max-width: 980px) {
+    #mobile-toggle-menu {
+      display: block;
+    }
+  
+    .menu {
+      animation: fadeIn ease-in-out 500ms;
+      display: none;
+      &.menu-open {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        height: 100vh;
+        flex-direction: column;
+        row-gap: 1.75rem;
+        width: 100%;
+        z-index: 5;
+        padding: 15px;
+        margin: 0;
+        background: rgb(3 31 72 / 90%);
+        padding: 2.5rem 0;
+      }
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
+/* 
+  Menu_Item.tsx
+  ------------------------
+*/
+.menu-item {
+  margin-bottom: 0;
+  .menu-item-link {
+    padding: 5px 12px;
+    font-size: var(--font-size-base);
+    color: var(--color-silver-100);
+    font-family: var(--font-family-IBM-Plex-Mono);
+    font-weight: 500;
+    transition: all 250ms ease-in-out;
+    &:hover {
+      text-decoration: none;
+      color: var(--color-mint-300);
+      text-shadow: 0px 2px 18px rgb(0 255 137 / 80%)
+    }
+    &.active {
+      text-shadow: 0px 5px 10px rgb(0 255 137 / 90%);
+    }
+  }
+  
+  @media screen and (max-width: 980px) {
+    .menu-item-link {
+      font-size: var(--font-size-2xl);
+      font-weight: 600;
+      &.active {
+        text-shadow: 0px 2px 18px rgb(0 255 137 / 80%);
+      }
+    }
+  }
+}
